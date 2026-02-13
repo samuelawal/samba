@@ -48,20 +48,18 @@ h1, h2, h3 {
 
 /* Scroll Snap for Cinematic feel */
 .snap-container {
-  height: 100vh;
-  height: 100dvh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scrollbar-width: none;
   width: 100%;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  height: 100%;
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (min-width: 1024px) {
   .snap-container {
-    scroll-snap-type: y proximity;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
   }
 }
 
@@ -71,23 +69,21 @@ h1, h2, h3 {
 
 .snap-section {
   min-height: 100vh;
-  min-height: 100dvh;
-  scroll-snap-align: start;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem 1rem;
-  overflow-x: hidden;
+  padding: 4rem 1rem;
+  overflow: hidden;
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .snap-section {
     height: 100vh;
+    scroll-snap-align: start;
     padding: 4rem 2rem;
-    overflow: hidden;
   }
 }
 
