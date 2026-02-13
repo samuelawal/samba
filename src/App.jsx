@@ -194,7 +194,7 @@ const App = () => {
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            A Message for Favour
+            A Message for Love
           </motion.h2>
           <Magnetic>
             <motion.button
@@ -279,7 +279,7 @@ const App = () => {
             Happy <span className="gradient-text">Valentine's</span>
           </h1>
           <p style={{marginTop: '10px'}} className="script-font text-3xl sm:text-4xl md:text-6xl text-rose-300 mt-8 md:mt-12 opacity-0 animate-[fadeIn_2s_ease-out_forwards_1s] tracking-wide px-4">
-            Amazing Favour
+            Amazing Love
           </p>
         </motion.div>
         
@@ -308,7 +308,7 @@ const App = () => {
           {[
             { src: video1, title: 'That Smile', text: 'One of the best things I have seen lately.' },
             { src: video2, title: 'Your Vibe', text: 'You have this energy that honestly just makes everything better.' },
-            { src: video3, title: 'Just Favour', text: 'No words needed, just really glad I know you.' }
+            { src: video3, title: 'Just Love', text: 'No words needed, just really glad I know you.' }
           ].map((item, idx) => (
             <motion.div
               key={idx}
@@ -420,42 +420,48 @@ const App = () => {
         </motion.div>
       </section>
 
-      {/* Final Question */}
-      <section className="snap-section last-section py-20">
-        {Array.from({ length: 15 }).map((_, i) => (
+      {/* Final Dedication Section */}
+      <section className="snap-section last-section py-32 relative overflow-hidden">
+        {Array.from({ length: 20 }).map((_, i) => (
           <FloatingSparkle key={i} delay={Math.random() * 5} x={Math.random() * 100} y={Math.random() * 100} />
         ))}
+        
         <motion.div 
-          className="glass-card text-center relative overflow-hidden px-8 py-12"
-          whileInView={{ scale: [0.95, 1], opacity: 1 }}
-          initial={{ scale: 0.95, opacity: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-4"
         >
-          <motion.div
-            className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent"
-            animate={{ x: ['-100%', '100%'] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          />
-          <h2 className="text-3xl sm:text-4xl md:text-7xl mb-10 font-bold tracking-tight px-4 leading-tight">Be my Valentine?</h2>
-          <p className="text-rose-100/50 mb-16 text-center text-sm sm:text-lg font-light max-w-md mx-auto leading-relaxed px-6" style={{textAlign: 'center'}}>
-            I'd really love to keep getting to know you. If the answer is yes, I promise to make it special.
-          </p>
+          <motion.div 
+            className="mb-12 inline-block"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+             <Heart size={64} className="mx-auto text-rose-500" fill="currentColor" />
+          </motion.div>
           
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center px-8 w-full" style={{marginTop: '12px'}}>
-            <Magnetic>
-              <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: '#f43f5e', y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-16 py-5 bg-rose-600 rounded-2xl font-medium text-small sm:text-xl shadow-2xl shadow-rose-900/40 tracking-wide transition-all"
-                onClick={celebrate}
-                style={{paddingLeft: '28px', paddingRight: '28px', paddingTop: '10px', paddingBottom: '10px'}}
-              >
-                I'd love to
-              </motion.button>
-            </Magnetic>
-            <div className="w-full sm:w-auto flex justify-center">
-              <NoButton />
-            </div>
-          </div>
+          <h2 className="text-5xl md:text-8xl font-bold mb-10 tracking-tighter">
+            To <span className="script-font text-rose-400">Us</span>
+          </h2>
+          
+          <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-rose-500 to-transparent mx-auto mb-12 opacity-50" />
+
+          <p className="text-lg md:text-2xl text-rose-100/80 font-light leading-loose max-w-3xl mx-auto mb-16 italic">
+            "I'm so incredibly glad our paths crossed. Thank you for being such a bright light in my world. Here's to more laughter, more stories, and more amazing moments together."
+          </p>
+
+          <motion.div
+             initial={{ opacity: 0 }}
+             whileInView={{ opacity: 1 }}
+             transition={{ delay: 0.5 }}
+             className="inline-block p-[2px] rounded-full bg-gradient-to-r from-transparent via-rose-500/50 to-transparent"
+          >
+             <div className="bg-black/40 backdrop-blur-md px-8 py-3 rounded-full border border-white/5">
+                <p className="text-sm md:text-base text-rose-300 font-medium tracking-[0.2em] uppercase">
+                  Happy Valentine's Day, Love
+                </p>
+             </div>
+          </motion.div>
         </motion.div>
 
         <footer className="absolute bottom-8 text-rose-200/40 text-sm flex items-center gap-2">
@@ -489,7 +495,7 @@ const LoveLetter = () => {
           <Heart size={40} fill="#f43f5e" color="#f43f5e" className={isOpen ? 'opacity-0' : 'opacity-100'} />
         </div>
         <p className={cn("script-font text-rose-800 text-lg sm:text-xl text-center transition-opacity duration-500", isOpen ? 'opacity-0' : 'opacity-100')}>
-          To Favour... <br /><span className="text-xs uppercase tracking-widest font-sans font-bold opacity-40">(Click to Open)</span>
+          To Love... <br /><span className="text-xs uppercase tracking-widest font-sans font-bold opacity-40">(Click to Open)</span>
         </p>
       </motion.div>
 
@@ -502,11 +508,11 @@ const LoveLetter = () => {
             style={{maxWidth: '500px', padding: '14px'}}
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[90vw] max-w-[420px] bg-white p-8 sm:p-14 rounded-lg shadow-2xl text-gray-800 z-10 border-t-8 border-rose-500 overflow-y-auto max-h-[70vh]"
           >
-            <h4 className="script-font text-3xl sm:text-5xl text-rose-600 mb-6 sm:mb-8 text-center border-b border-rose-100 pb-6 sm:pb-8 tracking-wider">Dearest Favour</h4>
+            <h4 className="script-font text-3xl sm:text-5xl text-rose-600 mb-6 sm:mb-8 text-center border-b border-rose-100 pb-6 sm:pb-8 tracking-wider">Dearest Love</h4>
             <div className="space-y-6 sm:space-y-8 text-sm sm:text-lg leading-relaxed sm:leading-loose text-gray-700 font-light italic">
               <p>I wanted to take a moment to tell you how much I enjoy every second we spend together.</p>
               <p>There's something so special about you—the way you speak, your ambition, and that spark you have. I've realized that I really, really like who you are.</p>
-              <p>I’m looking forward to every conversation we have next. Happy Valentine's Day, Favour.</p>
+              <p>I’m looking forward to every conversation we have next. Happy Valentine's Day, Love.</p>
             </div>
             <p className="mt-8 sm:mt-12 text-right font-semibold text-rose-600 script-font text-2xl sm:text-4xl">— Specifically Yours</p>
           </motion.div>
