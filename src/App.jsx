@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 
 // Video Imports
 import video1 from './assets/videos/WhatsApp Video 2026-02-11 at 14.13.42.mp4';
-import video2 from './assets/videos/WhatsApp Video 2026-02-11 at 14.13.43.mp4';
+import video2 from './assets/videos/WhatsApp Video 2026-02-13 at 14.54.04.mp4';
 import video3 from './assets/videos/WhatsApp Video 2026-02-11 at 14.13.43 (1).mp4';
 import bgMusic from './assets/videos/Billie Eilish - THE GREATEST (Official Lyric Video) (mp3cut.net) (1) (1) (1).mp3';
 
